@@ -2,37 +2,39 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is the use of the Ultrasonic Sensor?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Proximity Detection",
+        "b": "Humidity Detection",
+        "c": "Image Processing",
+        "d": "GPS"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
+      
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "How many pins are present in the Ultrasonic Sensor?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "4"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What are the factors that affect the performance of the Ultrasonic Sensor during operation?",
+      "answers": {
+        "a": "Distant Target Object",
+        "b": "Target Object hidden by fog",
+        "c": "Smoke",
+        "d": "Dust"
       },
-      "correctAnswer": "c",
+      
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
   ]

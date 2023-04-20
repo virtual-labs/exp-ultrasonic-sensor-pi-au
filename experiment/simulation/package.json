@@ -1,0 +1,27 @@
+{
+  "name": "iot-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.36.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-html": "^7.1.0",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1",
+    "vite": "^4.1.0"
+  },
+  "dependencies": {
+    "d3": "^7.8.2",
+    "d3-drag": "^3.0.0",
+    "d3-selection": "^3.0.0",
+    "d3-zoom": "^3.0.0",
+    "daisyui": "^2.51.5"
+  }
+}
