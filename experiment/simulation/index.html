@@ -5,15 +5,15 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  
 
 
   <title>Vite App</title>
-  <script type="module" crossorigin src=./assets/index-5994f9b5.js"></script>
-  <link rel="stylesheet" href="./assets/index-81eca35d.css">
+  <script type="module" crossorigin src="./assets/index-8b7d8be6.js"></script>
+  <link rel="stylesheet" href="./assets/index-9238cdd3.css">
 </head>
 
-<body class="drawer drawer-end container-fluid h-full bg-base-100">
+<body class="drawer drawer-end container-fluid h-full bg-base-100" style="overflow-y: scroll;">
   <!-- <div class="drawer drawer-end"> -->
   <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
@@ -22,7 +22,8 @@
     <div class="text-center bg-secondary p-4 rounded-b-xl">
       <button class="button float-left btn btn-warning btn-md w-40"
         onClick="window.location.href=window.location.href">RESET</button>
-      <span class="text-black font-serif font-light text-4xl">BLINK THE LED</span>
+      <span class="text-black font-serif font-light text-4xl">Ultrasonic Sensor Interfacing with Raspberry Pi and
+        Temperature/Humidity Reading Program</span>
       <label for="my-drawer-4" class="drawer-button btn btn-primary btn-md float-right w-40">&#x2630; CODE</label>
     </div>
     <!-- --------------NAVBAR AREA  ENDS -------------------->
@@ -30,6 +31,12 @@
     <!-- Information Area -->
     <div class="flex flex-col sm:flex-row ">
       <div class="w-1/3 m-5 hidden-scroll sm:block bg-base-200 p-6 ">
+        <div id="headline">
+          <p class=" ">
+            <span class="font-medium text-xl">Aim</span> : To interface LED with Raspberry Pi and write a program to
+            turn ON LED or 1 sec after every 2 seconds.
+          </p>
+        </div>
 
         <div id="theory">
           <h2 class="text-xl font-bold mt-8">Instructions</h2>
@@ -39,7 +46,21 @@
             <li>Double click on various connections points to make connections </li>
             <li>Double click on the empty space in the connection area to extend and bend wire connections </li>
           </ul>
-
+          <div class="mt-4">
+            <img src="./assets/experiment_5_connection_diagram-e4f0a0f5.jpeg" alt="diagram">
+          </div>
+          <h2 class="text-xl font-bold mt-8 mb-4">Procedure</h2>
+          <p class="text-lg">These are the steps to connect an ultrasonic sensor to a Raspberry Pi pin:</p>
+          <ol class="list-decimal ml-8 mt-4 text-lg">
+            <li>Connect the VCC pin of the sensor to the 3.3V power of the Raspberry Pi.</li>
+            <li>Make a voltage divider circuit using two resistors and connecting one end of the pin to another</li>
+            <li>Connect the trig pin to GPIO 11</li>
+            <li>Connect the echo pin to the 1k resistor</li>
+            <li>Connect 2k pin which is connected with 1k to GPIO 12</li>
+          </ol>
+          <p class="text-lg mt-4"> 
+            After completing these steps, you can change the temperature of the surroundings via the blue bottom bar and observe the result in the display.
+          </p>
           <div>
             <h2 class="text-xl font-bold mt-8">Connections Logs</h2>
             <ul class="list-disc ml-8 mt-4" id="connectionLog">
@@ -110,17 +131,29 @@
     <pre contenteditable="false" spellcheck="false">
       <span>import RPi.GPIO as GPIO</span>
       <span>import time</span>
-      <span>LED_PIN = <input name="ledPin" id="ledPin" placeholder="Enter the connected pin"></span>
       <span>GPIO.setmode(GPIO.BCM)</span>
-      <span>GPIO.setup(LED_PIN, GPIO.OUT)</span>
-      <span>try:</span>
+      <span>TRIG = 11</span>
+      <span>ECHO = 12</span>
+      <span>GPIO.setup(TRIG, GPIO.OUT)</span>
+      <span>GPIO.setup(ECHO, GPIO.IN)</span>
       <span>while True:</span>
-      <span>GPIO.output(LED_PIN, GPIO.HIGH)</span>
-      <span>time.sleep(1)</span>
-      <span>GPIO.output(LED_PIN, GPIO.LOW)</span>
-      <span>time.sleep(2)</span>
-      <span>except KeyboardInterrupt:</span>
-      <span>GPIO.cleanup()</span>
+      <span>&emsp;GPIO.output(TRIG, False)</span>
+      <span>&emsp;print("Sensor is stabilizing")</span>
+      <span>&emsp;time.sleep(2)</span>
+      <span>&emsp;GPIO.output(TRIG, True)</span>
+      <span>&emsp;time.sleep(0.00001)</span>
+      <span>&emsp;GPIO.output(TRIG, False)</span>
+      <span>&emsp;while GPIO.input(ECHO) == 0:</span>
+      <span>&emsp;&emsp;pulse_start = time.time()</span>
+      <span>&emsp;while GPIO.input(ECHO) == 1:</span>
+      <span>&emsp;&emsp;pulse_end = time.time()</span>
+      <span>&emsp;pulse_duration = pulse_end - pulse_start</span>
+      <span>distance = pulse_duration * 17150</span>
+      <span>distance = round(distance, 2)</span>
+      <span>if distance > 2 and distance 	&lt; 400:</span>
+      <span>&emsp;print("Distance:", distance - 0.5, "cm")</span>
+      <span>else:</span>
+      <span>&emsp;print("Out Of Range")</span>
       <button id="codeSubmit" class="btn btn-primary">Submit</button>
     </pre>
   </div>
