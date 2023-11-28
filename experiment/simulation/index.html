@@ -1,192 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Vite App</title>
-  <script type="module" crossorigin src="./js/index-956cc7dc.js"></script>
-  <link rel="stylesheet" href="./css/index-af0163a0.css">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<body class="drawer drawer-end container-fluid h-full bg-base-100" style="overflow-y: scroll;">
-  <!-- <div class="drawer drawer-end"> -->
-  <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="js/index-c92d674b.js"></script>
+    <link rel="stylesheet" href="css/index-f678a329.css" />
+  </head>
 
-    <!-- ------------- NAV BAR  AREA--------------------- -->
-    <div class="text-center bg-secondary p-4 rounded-b-xl">
-      <button class="button float-left btn btn-warning btn-md w-40" onClick="window.location.href=window.location.href" >RESET</button>
-      <span class="text-black font-serif font-light text-4xl">Raspberry Pi Motor Control with Relay and Push Button</span>
-      <label for="my-drawer-4" class="drawer-button btn btn-primary btn-md float-right w-40">&#x2630; CODE</label>
-    </div>
-    <!-- --------------NAVBAR AREA  ENDS -------------------->
+  <body class="drawer drawer-end container-fluid h-full bg-base-100">
+    <!-- <div class="drawer drawer-end"> -->
+    <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+      <!-- ------------- NAV BAR  AREA--------------------- -->
+      <div class="text-center bg-secondary p-4 rounded-b-xl">
+        <button
+          class="button float-left btn btn-warning btn-md w-40"
+          onClick="window.location.href=window.location.href"
+        >
+          RESET
+        </button>
+        <span class="text-black font-serif font-light text-4xl"
+          >Ultrasonic Sensor Interfacing with Raspberry Pi and
+          Temperature/Humidity Reading Program</span
+        >
+        <label
+          for="my-drawer-4"
+          class="drawer-button btn btn-primary btn-md float-right w-40"
+          >&#x2630; CODE</label
+        >
+      </div>
+      <!-- --------------NAVBAR AREA  ENDS -------------------->
 
-    
-    <!-- Information Area -->
-    <div class="flex flex-col sm:flex-row ">
-      <div class="w-1/3 m-5 hidden-scroll sm:block bg-base-200 p-6 ">
-        <div id="headline">
-         
-        </div>
+      <!-- Information Area -->
+      <div class="flex flex-col sm:flex-row">
+        <div class="w-1/3 m-5 sm:block bg-base-200 p-6">
+          <div id="theory">
+            <div style="display: flex; justify-content: flex-end">
+              <i
+                style="color: rgb(41, 104, 222); font-size: 15px"
+                class="fa fa-info"
+                id="info"
+              ></i>
+            </div>
 
-       
-        <div id="theory">
-          
-
-          <i id="infoIcon" class="fa-solid fa-circle-info fa-xl" style="color: #ff0000;"></i>
-<div id="generalInstructions"  style="display: none;">
-  <h2 class="text-xl font-bold mt-8">General Instructions</h2>
-          <ul class="list-disc ml-8 mt-4" >
-            <li>Click on the components to start interacting it with in the connection area</li>
-            <li>Hover over the raspberry pi connections to get informations about various connections pin </li>
-            <li>Double click on various connections points to make connections  </li>
-            <li>Double click on the empty space in the connection area to extend and bend wire connections  </li>
-          </ul>
-
-
-        </div>
-
-         
-          <div class="mt-4">
-            <h2 class="text-xl font-bold mt-8 mb-4">How to Connect</h2>
-            <img src="./images/exp6-50bf5093.png" alt="diagram">
-          </div>
-
-        
-          <ol class="list-disc ml-8 mt-4" >
-            <li>Connect 3.3 V pin of Raspberry Pi to VCC pin of Relay </li>
-            <li>Connect GND PIN of  Raspberry Pi  to GND of  Relay </li>
-            <li>Connect GPIO 21 of Raspberry Pi to Input pin of Relay
-            </li>
-           
-            <li>Connect COM(Common pin) of Relay to +ve Votage source of Battery</li>
-         
-            <li>Connect NO pin of Relay to +ve  terminal of DC motor </li>
-            <li>Connect -ve of Votage source of Battery in to -ve terminal of DC motor  </li>
-          </ol>
-
-          <div>
-            <h2 class="text-xl font-bold mt-8">Connections Logs</h2>
-            <ul class="list-disc ml-8 mt-4" id="connectionLog">
-
+            <ul id="list" style="display: none" class="list-disc ml-8 mt-4">
+              <h2 class="text-xl font-bold mt-8 mb-4">General Instruction</h2>
+              <li>
+                Click on the components to start interacting it with in the
+                connection area
+              </li>
+              <li>
+                Hover over the raspberry Pi connections to get informations
+                about various connections pin
+              </li>
+              <li>
+                Double click on various connections points to make connections
+              </li>
+              <li>
+                Double click on the empty space in the connection area to extend
+                and bend wire connections
+              </li>
             </ul>
-          </div>
+            <h2 class="text-xl font-bold mt-8 mb-4">How To Connect</h2>
 
-         </div>
-
-      </div>
-
-      <!------------------------ Information area ENDS --------------->
-
-      <!----------------------------- Components---------------------------------- -->
-      <div class="sm:w-2/3 h-screen">
-        <div class="h-full">
-
-          <div id="components" class="components">
-
-            <div id="rasberryPi" class="component bg-slate-200 rounded-lg text-center">
-              <img src="./images/pi3dirk-5f8e35c9.svg" class="w-20 h-20">
-              <span class="card-title">Raspberry Pi</span>
+            <div class="mt-4">
+              <img src="images/diagram-8cbb488e.png" alt="diagram" />
             </div>
 
-            <div id="relayContainer" class="component bg-slate-200 rounded-lg text-center">
-              <img src="./images/relay-6ad2afac.svg" class="w-20 h-20">
-              <span class="card-title">Relay</span>
+            <ol class="list-decimal ml-8 mt-4 text-lg">
+              <li>
+                Make a voltage divider circuit using two resistors and
+                connecting one end of the pin to another
+              </li>
+              <li>Connect the Vcc pin to 5V PWR</li>
+              <li>Connect the trig pin to GPIO 18</li>
+              <li>Connect the Gnd pin to Ground</li>
+              <li>Connect 1k pin which is connected with GPIO 24 to Ground</li>
+              <li>Connect 2k pin which is connected with 1k to Ground</li>
+            </ol>
+            <p class="text-lg mt-4">
+              After completing these steps, you can change the temperature of
+              the surroundings via the blue bottom bar and observe the result in
+              the display.
+            </p>
+            <div style="overflow-y: scroll">
+              <h2 class="text-xl font-bold mt-8">Connections Logs</h2>
+              <ul class="list-disc ml-8 mt-4" id="connectionLog"></ul>
             </div>
-
-            <div id="motor" class="component bg-slate-200 rounded-lg text-center">
-              <img src="./images/motor-893372b1.svg" class="w-20 h-20">
-              <span class="card-title">DC Motor</span>
-            </div>
-
-            <div id="battery" class="component bg-slate-200 rounded-lg text-center">
-              <img src="images/battery-1582aebe.svg" class="w-20 h-20">
-              <span class="card-title">9v battery</span>
-            </div>
-           
-
-          </div>
-
-          <hr>
-
-          <div id="svg" class="h-auto overflow-hidden m-4">
-            <span class="text-white bg-slate-600 font-serif font-light text-xl border border-solid border-black float-right text-center w-52 h-12 rounded-lg" id="displayInfo">CONNECTOR INFO</span>
           </div>
         </div>
+
+        <!------------------------ Information area ENDS --------------->
+
+        <!----------------------------- Components---------------------------------- -->
+        <div class="sm:w-2/3 h-screen">
+          <div class="h-full">
+            <div id="components" class="components">
+              <div
+                id="rasberryPi"
+                class="component bg-slate-200 rounded-lg text-center"
+              >
+                <img src="images/pi3dirk-eb710ce1.svg" class="w-20 h-20" />
+                <span class="card-title">Raspberry Pi</span>
+              </div>
+
+              <div
+                id="2kResistor"
+                class="component bg-slate-200 rounded-lg text-center"
+              >
+                <img src="images/1kResistor1-aa20e070.svg" class="w-20 h-20" />
+                <span class="card-title">2K Resistor</span>
+              </div>
+
+              <div
+                id="1kResistor"
+                class="component bg-slate-200 rounded-lg text-center"
+              >
+                <img src="images/2kResistor1-25d9e9eb.svg" class="w-20 h-20" />
+                <span class="card-title">1k Resistor</span>
+              </div>
+
+              <div
+                id="sensor"
+                class="component bg-slate-200 rounded-lg text-center"
+              >
+                <img src="images/sensor1-00079a65.svg" class="w-20 h-20" />
+                <span class="card-title">Ultrasonic Sensor</span>
+              </div>
+
+              <div
+                id="object"
+                class="component bg-slate-200 rounded-lg text-center"
+              >
+                <img src="images/box-ccd8b73a.svg" class="w-20 h-20" />
+                <span class="card-title">Object</span>
+              </div>
+            </div>
+
+            <hr />
+
+            <div id="svg" class="h-auto overflow-hidden m-4">
+              <span
+                class="text-white bg-slate-600 font-serif font-light text-xl border border-solid border-black float-right text-center w-52 h-12 rounded-lg"
+                id="displayInfo"
+                >CONNECTOR INFO</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!------------------- Component ENDS= ----------------- -->
       </div>
-
-
-      <!------------------- Component ENDS= ----------------- -->
-
     </div>
-  </div>
 
+    <!---------------------- Coding Area ------------------------->
+    <div class="drawer-side">
+      <label for="my-drawer-4" class="drawer-overlay"> </label>
 
-  <!---------------------- Coding Area ------------------------->
-  <div class="drawer-side">
-    <label for="my-drawer-4" class="drawer-overlay">
-    </label>
-    
-    <pre contenteditable="false" spellcheck="false">
+      <pre contenteditable="false" spellcheck="false">
       <span>import RPi.GPIO as GPIO</span>
       <span>import time</span>
-      
-      <span style="color:green"># Set up GPIO</span>
-      <span>GPIO.setmode(GPIO.BCM)
-       </span>
-      <span> GPIO.setup(relay_pin, GPIO.OUT)</span>
-      
-      <span  style="color:green"># Function to turn on the motor</span>
-      <span>def turn_on_motor():</span>
-      <span>    GPIO.output(relay_pin, GPIO.HIGH)</span>
-      <span>    print("Motor ON")</span>
-      
-      <span  style="color:green"># Function to turn off the motor</span>
-      <span>def turn_off_motor():</span>
-      <span>    GPIO.output(relay_pin, GPIO.LOW)</span>
-      <span>    print("Motor OFF")</span>
-      
-      <span>try:</span>
-      <span> # Set the GPIO pin for the relay
-      </span>
-      <span>   relay_pin = 17 </span>
-      <span  style="color:green">    # Main loop</span>
-      <span>    while True:</span>
-      <span>        turn_on_motor()</span>
-      <span>        time.sleep(5)  # Run the motor for 5 seconds</span>
-      <span>        turn_off_motor()</span>
-      <span>        time.sleep(2)  # Wait for 2 seconds before turning on again</span>
-      
-      <span>except KeyboardInterrupt:</span>
-      <span  style="color:green">    # Clean up GPIO on keyboard interrupt</span>
-      <span>    GPIO.cleanup()</span>
-      
+      <span style="color: green;"># Set GPIO mode</span>
+      <span >GPIO.setmode(GPIO.BCM)</span>
+      <span style="color: green;" ># Define GPIO pins</span>
+      <span>trig_pin = 18</span>
+      <span> echo_pin = 24</span>
+      <span style="color: green;" ># Setup GPIO pins</span>
+      <span>GPIO.setup(trig_pin, GPIO.OUT)</span>
+      <span> GPIO.setup(echo_pin, GPIO.IN)</span>
+      <span style="color: green;"> # Trigger pulse function</span>
+      <span> def send_trigger_pulse():</span>
+      <span> &emsp;&emsp;GPIO.output(trig_pin, True)</span>
+      <span> &emsp;&emsp;time.sleep(0.00001)</span>
+      <span> &emsp;&emsp;GPIO.output(trig_pin, False)</span>
+      <span style="color: green;"> # Trigger pulse function</span>
+      <span> def wait_for_echo(value, timeout):</span>
+      <span> &emsp;&emsp; count = timeout</span>
+      <span> &emsp;&emsp;while GPIO.input(echo_pin) != value and count > 0:</span>
+      <span> &emsp;&emsp;&emsp;count -= 1</span>
+      <span style="color: green;"># Calculate distance function</span>
+      <span>def get_distance():</span>
+      <span> &emsp;&emsp; send_trigger_pulse()</span>
+      <span> &emsp;&emsp; wait_for_echo(True, 10000)</span>
+      <span> &emsp;&emsp; start_time = time.time()</span>
+      <span> &emsp;&emsp; wait_for_echo(False, 10000)</span>
+      <span> &emsp;&emsp; end_time = time.time()</span>
+      <span> &emsp;&emsp; pulse_duration = end_time - start_time</span>
+      <span> &emsp;&emsp; distance = pulse_duration * 17150  # Speed of sound is approximately 343 meters/second</span>
+      <span> &emsp;&emsp; distance = round(distance, 2)</span>
+      <span> &emsp;&emsp; return distance</span>
+      <span style="color: green;"># Main loop</span>
+      <span> &emsp;&emsp; try:</span>
+      <span> &emsp;&emsp; &emsp; while True:</span>
+      <span> &emsp;&emsp; &emsp;&emsp; distance = get_distance()</span>
+      <span> &emsp;&emsp; &emsp;&emsp; print(f"Distance: {distance} cm")</span>
+      <span> &emsp;&emsp; &emsp;&emsp; time.sleep(1)</span>
+      <span >except KeyboardInterrupt:</span>
+      <span> &emsp;&emsp; GPIO.cleanup()</span>
+
+
       <button id="codeSubmit" class="btn btn-primary">Submit</button>
     </pre>
-  </div>
-
-
-  <!-- <div class="absolute right-1/2 transform translate-x-1/2 -translate-y-1/2 top-20 border border-black bg-red-500 text-white px-10 py-5 text-center">
-    hello
-  </div> -->
-
-  <div class="fixed inset-0 items-center justify-center bg-gray-900 bg-opacity-75 hidden" id="errorBox">
-    <div class="bg-red-500 p-8 rounded-lg shadow-lg">
-      <h2 class="text-white text-2xl mb-4" id="errorHeading">Error!</h2>
-      <p class="text-white" id="errorText">Sorry, an error has occurred.</p>
-      <button id="closeErrorBox" class="mt-4 px-4 py-2 bg-white text-red-500 font-semibold rounded-lg shadow-md hover:bg-red-500 hover:text-white">
-        OK
-      </button>
     </div>
-  </div>
 
-
-
-</body>
-
-
-</html> 
+    <div
+      class="fixed inset-0 items-center justify-center bg-gray-900 bg-opacity-75 hidden"
+      id="errorBox"
+    >
+      <div class="bg-red-500 p-8 rounded-lg shadow-lg">
+        <h2 class="text-white text-2xl mb-4" id="errorHeading">Error!</h2>
+        <p class="text-white" id="errorText">Sorry, an error has occurred.</p>
+        <button
+          id="closeErrorBox"
+          class="mt-4 px-4 py-2 bg-white text-red-500 font-semibold rounded-lg shadow-md hover:bg-red-500 hover:text-white"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
