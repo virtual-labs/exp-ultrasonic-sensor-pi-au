@@ -2,16 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    
+   
+      
     />
     <title>Vite App</title>
-    <script type="module" crossorigin src="js/index-c92d674b.js"></script>
-    <link rel="stylesheet" href="css/index-f678a329.css" />
+    <script type="module" crossorigin src="./js/index-32a48fce.js"></script>
+    <link rel="stylesheet" href="./css/index-6e42e2eb.css">
   </head>
 
   <body class="drawer drawer-end container-fluid h-full bg-base-100">
@@ -19,39 +21,25 @@
     <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content">
       <!-- ------------- NAV BAR  AREA--------------------- -->
-      <div class="text-center bg-secondary p-4 rounded-b-xl">
-        <button
-          class="button float-left btn btn-warning btn-md w-40"
-          onClick="window.location.href=window.location.href"
-        >
-          RESET
-        </button>
-        <span class="text-black font-serif font-light text-4xl"
-          >Ultrasonic Sensor Interfacing with Raspberry Pi and
-          Temperature/Humidity Reading Program</span
-        >
-        <label
-          for="my-drawer-4"
-          class="drawer-button btn btn-primary btn-md float-right w-40"
-          >&#x2630; CODE</label
-        >
-      </div>
+
       <!-- --------------NAVBAR AREA  ENDS -------------------->
 
       <!-- Information Area -->
       <div class="flex flex-col sm:flex-row">
-        <div class="w-1/3 m-5 sm:block bg-base-200 p-6">
-          <div id="theory">
-            <div style="display: flex; justify-content: flex-end">
+        <div class="w-1/3 sm:block bg-base-200 pl-6 pr-6">
+          <div id="theory" style="position:relative;">
+            <div style="position:absolute;right: 0; top: 12px; ">
               <i
-                style="color: rgb(41, 104, 222); font-size: 15px"
-                class="fa fa-info"
+                style="color: rgb(41, 156, 222);display: flex; justify-content: flex-end"
+                class="fa-solid fa-circle-info fa-xl"
                 id="info"
               ></i>
+             
             </div>
-
-            <ul id="list" style="display: none" class="list-disc ml-8 mt-4">
-              <h2 class="text-xl font-bold mt-8 mb-4">General Instruction</h2>
+            <div style="display: none" id="list">
+            <h2 class="text-xl font-bold mt-4 mb-4">General Instruction</h2>
+            <ul  class="list-disc ml-8 mt-4">
+             
               <li>
                 Click on the components to start interacting it with in the
                 connection area
@@ -68,32 +56,34 @@
                 and bend wire connections
               </li>
             </ul>
-            <h2 class="text-xl font-bold mt-8 mb-4">How To Connect</h2>
+          </div>
+            <h2 class="text-xl font-bold mt-4 mb-4">How To Connect</h2>
 
             <div class="mt-4">
-              <img src="images/diagram-8cbb488e.png" alt="diagram" />
+              <img src="./images/diagram.png" alt="diagram" />
             </div>
 
-            <ol class="list-decimal ml-8 mt-4 text-lg">
+            <ol id="list" class="list-disc ml-8 mt-4">
               <li>
                 Make a voltage divider circuit using two resistors and
                 connecting one end of the pin to another
               </li>
-              <li>Connect the Vcc pin to 5V PWR</li>
-              <li>Connect the trig pin to GPIO 18</li>
-              <li>Connect the Gnd pin to Ground</li>
-              <li>Connect 1k pin which is connected with GPIO 24 to Ground</li>
-              <li>Connect 2k pin which is connected with 1k to Ground</li>
+              <li>Connect the Vcc of Ultrasonic Sensor to pin to 5V PWR of Raspberry Pi</li>
+              <li>Connect the trig pin of Ultrasonic Sensor to GPIO 18  of Raspberry Pi</li>
+              <li>Connect the Gnd of Ultrasonic Sensor to Ground  of Raspberry Pi</li>
+              <li>Connect the Echo pin of Ultrasonic Sensor to 1K Resistor</li>
+              <li>Connect 1K Resistor pin which is connected with GPIO 24 to Ground</li>
+              <li>Connect 2K Resistor pin which is connected with 1K Resistor to Ground</li>
             </ol>
-            <p class="text-lg mt-4">
-              After completing these steps, you can change the temperature of
-              the surroundings via the blue bottom bar and observe the result in
+            <p id="list" class="list-disc  mt-4">
+              After completing these steps, you can change the positon of object 
+       and observe the result in
               the display.
             </p>
-            <div style="overflow-y: scroll">
+           
               <h2 class="text-xl font-bold mt-8">Connections Logs</h2>
               <ul class="list-disc ml-8 mt-4" id="connectionLog"></ul>
-            </div>
+          
           </div>
         </div>
 
@@ -103,11 +93,29 @@
         <div class="sm:w-2/3 h-screen">
           <div class="h-full">
             <div id="components" class="components">
+              <label
+            for="my-drawer-4"
+            class="drawer-button btn btn-primary btn-md float-right w-40 m-4"
+            >&#x2630; CODE</label
+          >
+            <button
+              class="button float-right btn btn-warning btn-md w-40 m-4"
+              onClick="window.location.href=window.location.href"
+            >
+              RESET
+            </button>
+            <button
+            id="undoButton"
+            class=" float-right btn  btn-md w-40 m-4"
+           style="background-color: #3498db; border: none;"
+          >
+            UNDO
+          </button>
               <div
                 id="rasberryPi"
                 class="component bg-slate-200 rounded-lg text-center"
               >
-                <img src="images/pi3dirk-eb710ce1.svg" class="w-20 h-20" />
+                <img src="./images/pi3dirk.svg" class="w-20 h-20" />
                 <span class="card-title">Raspberry Pi</span>
               </div>
 
@@ -115,7 +123,7 @@
                 id="2kResistor"
                 class="component bg-slate-200 rounded-lg text-center"
               >
-                <img src="images/1kResistor1-aa20e070.svg" class="w-20 h-20" />
+                <img src="./images/1kResistor1.svg" class="w-20 h-20" />
                 <span class="card-title">2K Resistor</span>
               </div>
 
@@ -123,15 +131,15 @@
                 id="1kResistor"
                 class="component bg-slate-200 rounded-lg text-center"
               >
-                <img src="images/2kResistor1-25d9e9eb.svg" class="w-20 h-20" />
-                <span class="card-title">1k Resistor</span>
+                <img src="./images/2kResistor1.svg" class="w-20 h-20" />
+                <span class="card-title">1K Resistor</span>
               </div>
 
               <div
                 id="sensor"
                 class="component bg-slate-200 rounded-lg text-center"
               >
-                <img src="images/sensor1-00079a65.svg" class="w-20 h-20" />
+                <img src="./images/sensor1.svg" class="w-20 h-20" />
                 <span class="card-title">Ultrasonic Sensor</span>
               </div>
 
@@ -139,7 +147,7 @@
                 id="object"
                 class="component bg-slate-200 rounded-lg text-center"
               >
-                <img src="images/box-ccd8b73a.svg" class="w-20 h-20" />
+                <img src="./images/box.svg" class="w-20 h-20" />
                 <span class="card-title">Object</span>
               </div>
             </div>
@@ -226,4 +234,5 @@
       </div>
     </div>
   </body>
+  
 </html>
