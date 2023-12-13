@@ -1,122 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-
-  <title>Vite App</title>
-  <script type="module" crossorigin src="./js/index-1d4082be.js"></script>
-  <link rel="stylesheet" href="./css/index-5874c9d2.css">
-</head>
-
-<body class="drawer drawer-end container-fluid h-full bg-base-100">
-  <!-- <div class="drawer drawer-end"> -->
-  <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content">
-
-    <!-- ------------- NAV BAR  AREA--------------------- -->
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="stylesheet"
+    
    
-    <!-- --------------NAVBAR AREA  ENDS -------------------->
+      
+    />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="./js/index-32a48fce.js"></script>
+    <link rel="stylesheet" href="./css/index-6e42e2eb.css">
+  </head>
 
-    <!-- Information Area -->
-    <div class="flex flex-col sm:flex-row ">
-      <div class="w-1/3  hidden-scroll sm:block bg-base-200 p-6 ">
-       
+  <body class="drawer drawer-end container-fluid h-full bg-base-100">
+    <!-- <div class="drawer drawer-end"> -->
+    <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+      <!-- ------------- NAV BAR  AREA--------------------- -->
 
-        <div id="theory">
-        
-            <h2 class="text-xl font-bold mt-8">Instructions</h2>
-            <ul class="list-disc ml-8 mt-4" >
-              <li>Click on the component to start interacting it with in the connection area</li>
-              <li>Hover over the raspberry Pi connections to get informations about various connections pin </li>
-            
+      <!-- --------------NAVBAR AREA  ENDS -------------------->
+
+      <!-- Information Area -->
+      <div class="flex flex-col sm:flex-row">
+        <div class="w-1/3 sm:block bg-base-200 pl-6 pr-6">
+          <div id="theory" style="position:relative;">
+            <div style="position:absolute;right: 0; top: 12px; ">
+              <i
+                style="color: rgb(41, 156, 222);display: flex; justify-content: flex-end"
+                class="fa-solid fa-circle-info fa-xl"
+                id="info"
+              ></i>
+             
+            </div>
+            <div style="display: none" id="list">
+            <h2 class="text-xl font-bold mt-4 mb-4">General Instruction</h2>
+            <ul  class="list-disc ml-8 mt-4">
+             
+              <li>
+                Click on the components to start interacting it with in the
+                connection area
+              </li>
+              <li>
+                Hover over the raspberry Pi connections to get informations
+                about various connections pin
+              </li>
+              <li>
+                Double click on various connections points to make connections
+              </li>
+              <li>
+                Double click on the empty space in the connection area to extend
+                and bend wire connections
+              </li>
             </ul>
-          <h2 class="text-xl font-bold mt-8">Software Installation</h2>
-            <ul class="list-disc ml-8 mt-4">
-            <li>Update the Raspberry Pi: Before installing any software, it is always recommended to update the Raspberry Pi's software packages to ensure that you have the latest security updates and bug fixes. Open a terminal window and type the following commands:</li>
-            <br><p>sudo apt-get update</p>
-             <p> sudo apt-get upgrade
-              </p><br>
-              <li>Choose the software you want to install: There are thousands of software packages available for the Raspberry Pi, including web servers, media centers, development tools, and more. You can browse the available packages using the Raspberry Pi's package manager by typing:</li>
-              <br> <p>sudo apt-cache search keyword </p>
-              <p>Replace "package-name" with the name of the software package you want to install.</p>
-              <br>
-              <li>Configure the software: Depending on the software you installed, you may need to configure it before you can use it. Consult the software's documentation for instructions on how to do this</li>
-              <li>Verify the installation: Once you have installed and configured the software, you can verify that it is working properly by testing it.</li>
-          
-            </ul>
-         
+          </div>
+            <h2 class="text-xl font-bold mt-4 mb-4">How To Connect</h2>
 
-         
-
-        </div>
-      </div>
-
-      <!------------------------ Information area ENDS --------------->
-
-      <!----------------------------- Components---------------------------------- -->
-      <div class="sm:w-2/3 h-screen">
-        <div class="h-full">
-
-          <div id="components" class="components">
-
-            <div id="rasberryPi" class="component bg-slate-200 rounded-lg text-center">
-              <img src="./images/pi3dirk.svg" class="w-20 h-20">
-              <span class="card-title">Raspberry Pi</span>
+            <div class="mt-4">
+              <img src="./images/diagram.png" alt="diagram" />
             </div>
 
-          </div>
-
-          <hr>
-
-          <div id="svg" class="h-auto overflow-hidden m-4">
-            <span
-              class="text-white bg-slate-600 font-serif font-light text-xl border border-solid border-black float-right text-center w-52 h-12 rounded-lg"
-              id="displayInfo">CONNECTOR INFO</span>
+            <ol id="list" class="list-disc ml-8 mt-4">
+              <li>
+                Make a voltage divider circuit using two resistors and
+                connecting one end of the pin to another
+              </li>
+              <li>Connect the Vcc of Ultrasonic Sensor to pin to 5V PWR of Raspberry Pi</li>
+              <li>Connect the trig pin of Ultrasonic Sensor to GPIO 18  of Raspberry Pi</li>
+              <li>Connect the Gnd of Ultrasonic Sensor to Ground  of Raspberry Pi</li>
+              <li>Connect the Echo pin of Ultrasonic Sensor to 1K Resistor</li>
+              <li>Connect 1K Resistor pin which is connected with GPIO 24 to Ground</li>
+              <li>Connect 2K Resistor pin which is connected with 1K Resistor to Ground</li>
+            </ol>
+            <p id="list" class="list-disc  mt-4">
+              After completing these steps, you can change the positon of object 
+       and observe the result in
+              the display.
+            </p>
+           
+              <h2 class="text-xl font-bold mt-8">Connections Logs</h2>
+              <ul class="list-disc ml-8 mt-4" id="connectionLog"></ul>
+          
           </div>
         </div>
+
+        <!------------------------ Information area ENDS --------------->
+
+        <!----------------------------- Components---------------------------------- -->
+        <div class="sm:w-2/3 h-screen">
+          <div class="h-full">
+            <div id="components" class="components">
+              <label
+            for="my-drawer-4"
+            class="drawer-button btn btn-primary btn-md float-right w-40 m-4"
+            >&#x2630; CODE</label
+          >
+            <button
+              class="button float-right btn btn-warning btn-md w-40 m-4"
+              onClick="window.location.href=window.location.href"
+            >
+              RESET
+            </button>
+            <button
+            id="undoButton"
+            class=" float-right btn  btn-md w-40 m-4"
+           style="background-color: #3498db; border: none;"
+          >
+            UNDO
+          </button>
+              <div
+                id="rasberryPi"
+                class="component bg-slate-200 rounded-lg text-center"
+              >
+                <img src="./images/pi3dirk.svg" class="w-20 h-20" />
+                <span class="card-title">Raspberry Pi</span>
+              </div>
+
+              <div
+                id="2kResistor"
+                class="component bg-slate-200 rounded-lg text-center"
+              >
+                <img src="./images/1kResistor1.svg" class="w-20 h-20" />
+                <span class="card-title">2K Resistor</span>
+              </div>
+
+              <div
+                id="1kResistor"
+                class="component bg-slate-200 rounded-lg text-center"
+              >
+                <img src="./images/2kResistor1.svg" class="w-20 h-20" />
+                <span class="card-title">1K Resistor</span>
+              </div>
+
+              <div
+                id="sensor"
+                class="component bg-slate-200 rounded-lg text-center"
+              >
+                <img src="./images/sensor1.svg" class="w-20 h-20" />
+                <span class="card-title">Ultrasonic Sensor</span>
+              </div>
+
+              <div
+                id="object"
+                class="component bg-slate-200 rounded-lg text-center"
+              >
+                <img src="./images/box.svg" class="w-20 h-20" />
+                <span class="card-title">Object</span>
+              </div>
+            </div>
+
+            <hr />
+
+            <div id="svg" class="h-auto overflow-hidden m-4">
+              <span
+                class="text-white bg-slate-600 font-serif font-light text-xl border border-solid border-black float-right text-center w-52 h-12 rounded-lg"
+                id="displayInfo"
+                >CONNECTOR INFO</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!------------------- Component ENDS= ----------------- -->
       </div>
-
-
-      <!------------------- Component ENDS= ----------------- -->
-
     </div>
-  </div>
+
+    <!---------------------- Coding Area ------------------------->
+    <div class="drawer-side">
+      <label for="my-drawer-4" class="drawer-overlay"> </label>
+
+      <pre contenteditable="false" spellcheck="false">
+      <span>import RPi.GPIO as GPIO</span>
+      <span>import time</span>
+      <span style="color: green;"># Set GPIO mode</span>
+      <span >GPIO.setmode(GPIO.BCM)</span>
+      <span style="color: green;" ># Define GPIO pins</span>
+      <span>trig_pin = 18</span>
+      <span> echo_pin = 24</span>
+      <span style="color: green;" ># Setup GPIO pins</span>
+      <span>GPIO.setup(trig_pin, GPIO.OUT)</span>
+      <span> GPIO.setup(echo_pin, GPIO.IN)</span>
+      <span style="color: green;"> # Trigger pulse function</span>
+      <span> def send_trigger_pulse():</span>
+      <span> &emsp;&emsp;GPIO.output(trig_pin, True)</span>
+      <span> &emsp;&emsp;time.sleep(0.00001)</span>
+      <span> &emsp;&emsp;GPIO.output(trig_pin, False)</span>
+      <span style="color: green;"> # Trigger pulse function</span>
+      <span> def wait_for_echo(value, timeout):</span>
+      <span> &emsp;&emsp; count = timeout</span>
+      <span> &emsp;&emsp;while GPIO.input(echo_pin) != value and count > 0:</span>
+      <span> &emsp;&emsp;&emsp;count -= 1</span>
+      <span style="color: green;"># Calculate distance function</span>
+      <span>def get_distance():</span>
+      <span> &emsp;&emsp; send_trigger_pulse()</span>
+      <span> &emsp;&emsp; wait_for_echo(True, 10000)</span>
+      <span> &emsp;&emsp; start_time = time.time()</span>
+      <span> &emsp;&emsp; wait_for_echo(False, 10000)</span>
+      <span> &emsp;&emsp; end_time = time.time()</span>
+      <span> &emsp;&emsp; pulse_duration = end_time - start_time</span>
+      <span> &emsp;&emsp; distance = pulse_duration * 17150  # Speed of sound is approximately 343 meters/second</span>
+      <span> &emsp;&emsp; distance = round(distance, 2)</span>
+      <span> &emsp;&emsp; return distance</span>
+      <span style="color: green;"># Main loop</span>
+      <span> &emsp;&emsp; try:</span>
+      <span> &emsp;&emsp; &emsp; while True:</span>
+      <span> &emsp;&emsp; &emsp;&emsp; distance = get_distance()</span>
+      <span> &emsp;&emsp; &emsp;&emsp; print(f"Distance: {distance} cm")</span>
+      <span> &emsp;&emsp; &emsp;&emsp; time.sleep(1)</span>
+      <span >except KeyboardInterrupt:</span>
+      <span> &emsp;&emsp; GPIO.cleanup()</span>
 
 
-  <!---------------------- Coding Area ------------------------->
-  <div class="drawer-side">
-    <label for="my-drawer-4" class="drawer-overlay">
-    </label>
-
-    <pre contenteditable="false" spellcheck="false">
-      <span>You can write code here and define the pins</span>
-      
       <button id="codeSubmit" class="btn btn-primary">Submit</button>
     </pre>
-  </div>
- 
-
-
-
-  <div class="fixed inset-0 items-center justify-center bg-gray-900 bg-opacity-75 hidden" id="errorBox">
-    <div class="bg-red-500 p-8 rounded-lg shadow-lg">
-      <h2 class="text-white text-2xl mb-4" id="errorHeading">Error!</h2>
-      <p class="text-white" id="errorText">Sorry, an error has occurred.</p>
-      <button id="closeErrorBox"
-        class="mt-4 px-4 py-2 bg-white text-red-500 font-semibold rounded-lg shadow-md hover:bg-red-500 hover:text-white">
-        OK
-      </button>
     </div>
-  </div>
 
-
-
-
-</body>
-
-
+    <div
+      class="fixed inset-0 items-center justify-center bg-gray-900 bg-opacity-75 hidden"
+      id="errorBox"
+    >
+      <div class="bg-red-500 p-8 rounded-lg shadow-lg">
+        <h2 class="text-white text-2xl mb-4" id="errorHeading">Error!</h2>
+        <p class="text-white" id="errorText">Sorry, an error has occurred.</p>
+        <button
+          id="closeErrorBox"
+          class="mt-4 px-4 py-2 bg-white text-red-500 font-semibold rounded-lg shadow-md hover:bg-red-500 hover:text-white"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </body>
+  
 </html>
