@@ -1,0 +1,41 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the use of the Ultrasonic Sensor?",
+      "answers": {
+        "a": "Proximity Detection",
+        "b": "Humidity Detection",
+        "c": "Image Processing",
+        "d": "GPS"
+      },
+      
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "How many pins are present in the Ultrasonic Sensor?",
+      "answers": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "4"
+      },
+      
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What are the factors that affect the performance of the Ultrasonic Sensor during operation?",
+      "answers": {
+        "a": "Distant Target Object",
+        "b": "Target Object hidden by fog",
+        "c": "Smoke",
+        "d": "Dust"
+      },
+      
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}
