@@ -1,6 +1,6 @@
 ### Procedure
 
-Hardware Setup
+* Read the instructions carefully. Click on the components to start interacting with it in the connection area.
 
 * Connect one wire between the Raspberry Pi's GND (ground) pin and the Ultrasonic Sensor’s GND pin.
 * Connect one wire between the Raspberry Pi's 5V pin and the Sensor’s 5V pin.
@@ -8,8 +8,7 @@ Hardware Setup
 * The Echo pin of the Sensor is connected to the GPIO 12 pin of the RPI.
 * Setting up the Voltage Divider Circuit(Level Shifter)
 * The echo pin of ultrasonic sensor is connected to two resistors of 1kΩ and 2kΩ in series to GND. the intersection of both resistors are connected to the 3.3V pin and the whole circuit is then connected to the GPIO 12 Pin  
-
-Software Setup –
+* After completing the circuit diagram, click the "Code" button and submit the code.Software Setup –
 Control the Ultrasonic Sensor with Python 3 on Raspberry Pi OS –
 * Now that the hardware and software are properly configured, we can begin controlling the Ultrasonic Sensor on the Raspberry Pi with Python3.
 * First, we import the RPi.GPIO Python module, which allows us to control all GPIOs on the Raspberry Pi through the GPIO header.
