@@ -1,7 +1,6 @@
 ### Procedure
 
 * Read the instructions carefully. Click on the components to start interacting with it in the connection area.
-
 * Connect one wire between the Raspberry Pi's GND (ground) pin and the Ultrasonic Sensor’s GND pin.
 * Connect one wire between the Raspberry Pi's 5V pin and the Sensor’s 5V pin.
 * The Trigger pin of the Sensor is connected directly to the GPIO 11 Pin of the Raspberry Pi via the level shifter.
