@@ -2,40 +2,70 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "What is the use of the Ultrasonic Sensor?",
+      "question": "What is the primary use of the Ultrasonic Sensor in this experiment?",
       "answers": {
-        "a": "Proximity Detection",
-        "b": "Humidity Detection",
-        "c": "Image Processing",
-        "d": "GPS"
+        "a": "Proximity detection and distance measurement",
+        "b": "Humidity detection",
+        "c": "Temperature sensing",
+        "d": "Light intensity measurement"
       },
-      
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "How many pins are present in the Ultrasonic Sensor?",
+      "question": "How many pins are present on the HC-SR04 Ultrasonic Sensor?",
       "answers": {
         "a": "1",
         "b": "2",
         "c": "3",
         "d": "4"
       },
-      
       "correctAnswer": "d",
       "difficulty": "beginner"
     },
     {
-      "question": "What are the factors that affect the performance of the Ultrasonic Sensor during operation?",
+      "question": "What is the purpose of the Trig pin on the HC-SR04 sensor?",
       "answers": {
-        "a": "Distant Target Object",
-        "b": "Target Object hidden by fog",
-        "c": "Smoke",
-        "d": "Dust"
+        "a": "To receive the reflected ultrasonic wave",
+        "b": "To initiate the transmission of an ultrasonic wave",
+        "c": "To supply power to the sensor",
+        "d": "To ground the sensor"
       },
-      
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
+    },
+    {
+      "question": "Why is a level shifter or voltage divider used with the Echo pin?",
+      "answers": {
+        "a": "To increase the sensor’s range",
+        "b": "To step down the 5V signal to 3.3V for the Raspberry Pi’s GPIO",
+        "c": "To amplify the ultrasonic wave",
+        "d": "To connect the sensor to the power supply"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the speed of sound in air used to calculate distance with the HC-SR04?",
+      "answers": {
+        "a": "340 m/s",
+        "b": "500 m/s",
+        "c": "200 m/s",
+        "d": "1000 m/s"
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which GPIO pin on the Raspberry Pi is connected to the Trigger pin of the HC-SR04 in the circuit?",
+      "answers": {
+        "a": "GPIO 12 (Physical Pin 32)",
+        "b": "GPIO 11 (Physical Pin 23)",
+        "c": "GPIO 5 (Physical Pin 29)",
+        "d": "GPIO 6 (Physical Pin 31)"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
     }
   ]
 }
