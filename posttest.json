@@ -1,0 +1,51 @@
+{
+  "version": 2.0,
+  "questions": [
+   
+    {
+      "question": "An object is placed at an unknown distance in front of the sensor, and the echo pin generates a pulse with a width of 500µs. What is the calculated distance?",
+      "answers": {
+        "a": "17 cm",
+        "b": "34 cm",
+        "c": "8.5 cm",
+        "d": "None of these"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    
+    {
+      "question": "Which of the following factors can affect the accuracy of an ultrasonic sensor?",
+      "answers": {
+        "a": "Temperature variations",
+        "b": "Humidity levels",
+        "c": "Surface material and angle of the object",
+        "d": "All of the above"
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Why is a voltage divider used when interfacing the HC-SR04 sensor with a Raspberry Pi?",
+      "answers": {
+        "a": "To amplify the signal from the sensor",
+        "b": "To convert the 5V output of the sensor to 3.3V compatible with Raspberry Pi GPIO",
+        "c": "To stabilize the power supply",
+        "d": "It is not necessary to use a voltage divider"
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Which principle does an ultrasonic sensor use to measure distance?",
+      "answers": {
+        "a": "Infrared reflection",
+        "b": "Time-of-flight measurement using sound waves",
+        "c": "Radio frequency wave propagation",
+        "d": "Optical triangulation"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    }
+  ]
+}
