@@ -1,1 +1,1 @@
-## Raspberry Pi Ultrasonic Sensor Distance Measurement
+## To interface an Ultrasonic sensor with Raspberry Pi 
