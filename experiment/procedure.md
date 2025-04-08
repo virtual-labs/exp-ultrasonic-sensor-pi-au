@@ -1,49 +1,103 @@
-### Procedure
+### **Procedure**
 
-* Read the instructions carefully. Click on the components to start interacting with it in the connection area.
-* Connect one wire between the Raspberry Pi's GND (ground) pin and the Ultrasonic Sensor’s GND pin.
-* Connect one wire between the Raspberry Pi's 5V pin and the Sensor’s 5V pin.
-* The Trigger pin of the Sensor is connected directly to the GPIO 11 Pin of the Raspberry Pi via the level shifter.
-* The Echo pin of the Sensor is connected to the GPIO 12 pin of the RPI.
-* Setting up the Voltage Divider Circuit(Level Shifter)
-* The echo pin of ultrasonic sensor is connected to two resistors of 1kΩ and 2kΩ in series to GND. the intersection of both resistors are connected to the 3.3V pin and the whole circuit is then connected to the GPIO 12 Pin  
-* After completing the circuit diagram, click the "Code" button and submit the code.Software Setup –
-Control the Ultrasonic Sensor with Python 3 on Raspberry Pi OS –
-* Now that the hardware and software are properly configured, we can begin controlling the Ultrasonic Sensor on the Raspberry Pi with Python3.
-* First, we import the RPi.GPIO Python module, which allows us to control all GPIOs on the Raspberry Pi through the GPIO header.
-* We also include the time module, which will be used later to wait 2 seconds.
-* Create a "constant" global variable with the LED's GPIO number. This allows you to utilise the variable name rather than the number directly. It will produce fewer errors.
-* Use the RPi.GPIO module to execute. This allows you to utilise GPIO numbers rather than "normal" pin numbers.
-* Configure the respective input and output pins.
-* Set the trigger pin as high for 10 microseconds to start the ultrasonic module. It sends 8 ultrasonic bursts a 40 KHz
-* Set the trigger as Low and note down the time taken between the pulse sent and received
-* Calculate the distance by multiplying the speed with half of the time value.
+#### **Hardware Setup**
 
-Code –
+To interface the **HC-SR04 Ultrasonic Sensor** with the **Raspberry Pi**, follow the wiring instructions carefully:
 
-    import RPi.GPIO as GPIO              #Import GPIO library
-    import time                                	#Import time library
-    GPIO.setmode(GPIO.BCM)             	#Set GPIO pin numberingBCM refers GPIO nos 
-    TRIG = 11                                			#Associate pin 11 to TRIG
-    ECHO = 12                                 		 	#Associate pin 12 to ECHO
-    GPIO.setup(TRIG,GPIO.OUT)                 	#Set pin as GPIO out
-    GPIO.setup(ECHO,GPIO.IN)                  	#Set pin as GPIO in
+- Connect the **Vcc pin** of the Ultrasonic Sensor to the **5V PWR** pin of the Raspberry Pi.  
+- Connect the **Trig pin** of the Ultrasonic Sensor to **GPIO 18** of the Raspberry Pi.  
+- Connect the **GND pin** of the Ultrasonic Sensor to a **Ground (GND)** pin on the Raspberry Pi.  
+- Connect the **Echo pin** of the Ultrasonic Sensor to a **1KΩ Resistor**.  
+- Connect the **1KΩ Resistor pin**, which is connected with **GPIO 24**, to **Ground (GND)**.  
+- Connect the **2KΩ Resistor pin**, which is connected with the **1KΩ Resistor**, to **Ground (GND)**.  
+
+
+
+#### **Software Setup**
+
+To control the **Ultrasonic Sensor** using **Python 3** on **Raspberry Pi OS**, follow these steps:
+
+ **1. Import Required Libraries**  
+- Import the `RPi.GPIO` module to interact with Raspberry Pi GPIO pins.  
+- Import the `time` module for timing operations.  
+
+ **2. Set GPIO Mode**  
+- Use `GPIO.setmode(GPIO.BCM)` to refer to GPIO numbers instead of physical pin numbers.  
+
+**3. Define Sensor Pins**  
+- Assign **GPIO 18** to the **Trigger pin**.  
+- Assign **GPIO 24** to the **Echo pin**.  
+
+ **4. Configure GPIO Pins**  
+- Set the **Trig pin** as an **output**.  
+- Set the **Echo pin** as an **input**.  
+
+ **5. Trigger the Sensor and Measure Response Time**  
+- Set the **Trigg pin HIGH** for **10 microseconds** to send an **ultrasonic burst** at **40 KHz**.  
+- Set the **Trig pin LOW** and measure the time taken for the sound wave to return.  
+
+ **6. Calculate Distance**  
+- Compute distance using the **time difference** between sending and receiving the pulse.  
+- The formula used is:  
+
+  \[
+  \text{Distance} = \left( \text{Pulse Duration} \times 34300 \right) / 2
+  \]  
+
+  where **34300 cm/s** is the speed of sound in air, and the result is divided by **2** to account for the round trip.  
+
+ **7. Display Output**  
+- If the measured distance is **within 2 cm and 400 cm**, print the calculated value with **0.5 cm calibration**.  
+- Otherwise, display **"Out of Range"**.  
+
+
+
+#### **Python Code Implementation**
+
+```python
+import RPi.GPIO as GPIO  # Import GPIO library
+import time  # Import time library
+
+# GPIO pin configuration
+GPIO.setmode(GPIO.BCM)  # Use Broadcom (GPIO) pin numbering
+TRIG = 18  # Assign GPIO 18 to Trigger
+ECHO = 24  # Assign GPIO 24 to Echo
+
+# Set up GPIO pin modes
+GPIO.setup(TRIG, GPIO.OUT)  # Set Trigger as output
+GPIO.setup(ECHO, GPIO.IN)  # Set Echo as input
+
+try:
     while True:
-  	GPIO.output(TRIG, False)                 	#Set TRIG as LOW
-  	print("Sensor is stablizing")
-  	time.sleep(2)                           		#Delay of 2 seconds
-  	GPIO.output(TRIG, True)                  	#Set TRIG as HIGH
- 	time.sleep(0.00001)                     	#Delay of 0.00001 seconds
-  	GPIO.output(TRIG, False)                	#Set TRIG as LOW
- 	while GPIO.input(ECHO)==0:               #Check whether the ECHO is LOW
-    		pulse_start = time.time()            #Saves the last known time of LOW pulse
-  	while GPIO.input(ECHO)==1:               #Check whether the ECHO is HIGH
-    		pulse_end = time.time()              #Saves the last known time of HIGH pulse 
-  	pulse_duration = pulse_end - pulse_start 	#Get pulse duration to a variable
-    distance = pulse_duration * 17150   	#Multiply pulse duration by 17150 to get distance
-  	distance = round(distance, 2)            	#Round to two decimal points
-  	if distance > 2 and distance < 400:        #Check whether the distance is within range
-    	print("Distance:",distance - 0.5,"cm")       #Print distance with 0.5 cm calibration
-  	else:
-                print("Out Of Range" )                  	 #display out of range
+        GPIO.output(TRIG, False)  # Ensure Trigger is LOW
+        print("Sensor is stabilizing...")
+        time.sleep(2)  # Allow sensor to settle
 
+        # Send ultrasonic pulse
+        GPIO.output(TRIG, True)
+        time.sleep(0.00001)  # 10 microseconds pulse
+        GPIO.output(TRIG, False)
+
+        # Measure the time of flight
+        while GPIO.input(ECHO) == 0:
+            pulse_start = time.time()  # Record start time
+
+        while GPIO.input(ECHO) == 1:
+            pulse_end = time.time()  # Record end time
+
+        # Calculate distance
+        pulse_duration = pulse_end - pulse_start
+        distance = (pulse_duration * 34300) / 2  # Convert to cm
+        distance = round(distance, 2)  # Round to 2 decimal places
+
+        # Display results
+        if 2 <= distance <= 400:
+            print(f"Distance: {distance - 0.5} cm")  # Apply 0.5 cm correction
+        else:
+            print("Out of Range")
+
+        time.sleep(1)  # Delay before next measurement
+
+except KeyboardInterrupt:
+    print("Measurement stopped by user")
+    GPIO.cleanup()  # Reset GPIO settings
