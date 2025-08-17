@@ -10,8 +10,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <title>Vite App</title>
-    <script type="module" crossorigin src="js/index-430ece7d.js"></script>
-    <link rel="stylesheet" href="css/index-b914a8df.css">
+    <script type="module" crossorigin src="js/index-ca583637.js"></script>
+    <link rel="stylesheet" href="css/index-60e1c84b.css">
   </head>
 
   <body class="drawer drawer-end container-fluid h-full">
@@ -172,54 +172,55 @@
     </div>
 
     <!-- Coding Area -->
- <div class="drawer-side">
-  <label for="my-drawer-4" class="drawer-overlay"></label>
-  <pre contenteditable="false" spellcheck="false">
-    <div>import RPi.GPIO as GPIO</div>
-    <div>import time</div>
-    <div style="color: green;"># Set GPIO mode</div>
-    <div>GPIO.setmode(GPIO.BCM)</div>
-    <div style="color: green;"># Define GPIO pins</div>
-    <div>trig_pin = 18</div>
-    <div>echo_pin = 24</div>
-    <div style="color: green;"># Setup GPIO pins</div>
-    <div>GPIO.setup(trig_pin, GPIO.OUT)</div>
-    <div>GPIO.setup(echo_pin, GPIO.IN)</div>
-    <div style="color: green;"># Trigger pulse function</div>
-    <div>def send_trigger_pulse():</div>
-    <div>    GPIO.output(trig_pin, True)</div>
-    <div>    time.sleep(0.00001)</div>
-    <div>    GPIO.output(trig_pin, False)</div>
-    <div style="color: green;"># Wait for echo function</div>
-    <div>def wait_for_echo(value, timeout):</div>
-    <div>    count = timeout</div>
-    <div>    while GPIO.input(echo_pin) != value and count > 0:</div>
-    <div>        count -= 1</div>
-    <div style="color: green;"># Calculate distance function</div>
-    <div>def get_distance():</div>
-    <div>    send_trigger_pulse()</div>
-    <div>    wait_for_echo(True, 10000)</div>
-    <div>    start_time = time.time()</div>
-    <div>    wait_for_echo(False, 10000)</div>
-    <div>    end_time = time.time()</div>
-    <div>    pulse_duration = end_time - start_time</div>
-    <div>    distance = pulse_duration * 17150  # Speed of sound is approximately 343 meters/second</div>
-    <div>    distance = round(distance, 2)</div>
-    <div>    return distance</div>
-    <div style="color: green;"># Main loop</div>
-    <div>try:</div>
-    <div>    while True:</div>
-    <div>        distance = get_distance()</div>
-    <div>        print(f"Distance: {distance} cm")</div>
-    <div>        time.sleep(1)</div>
-    <div>except KeyboardInterrupt:</div>
-    <div>    GPIO.cleanup()</div>
-    <div class="flex justify-start space-x-20 mt-4">
-      <button id="backButton" class="btn btn-secondary">Back</button>
-      <button id="codeSubmit" class="btn btn-primary">Submit</button>
-    </div>
-  </pre>
+    <div class="drawer-side">
+      <label for="my-drawer-4" class="drawer-overlay"></label>
+      <pre contenteditable="false" spellcheck="false">
+        <span>import RPi.GPIO as GPIO</span>
+        <span>import time</span>
+        <span style="color: green;"># Set GPIO mode</span>
+        <span>GPIO.setmode(GPIO.BCM)</span>
+        <span style="color: green;"># Define GPIO pins</span>
+        <span>trig_pin = 18</span>
+        <span>echo_pin = 24</span>
+        <span style="color: green;"># Setup GPIO pins</span>
+        <span>GPIO.setup(trig_pin, GPIO.OUT)</span>
+        <span>GPIO.setup(echo_pin, GPIO.IN)</span>
+        <span style="color: green;"># Trigger pulse function</span>
+        <span>def send_trigger_pulse():</span>
+        <span>    GPIO.output(trig_pin, True)</span>
+        <span>    time.sleep(0.00001)</span>
+        <span>    GPIO.output(trig_pin, False)</span>
+        <span style="color: green;"># Wait for echo function</span>
+        <span>def wait_for_echo(value, timeout):</span>
+        <span>    count = timeout</span>
+        <span>    while GPIO.input(echo_pin) != value and count > 0:</span>
+        <span>        count -= 1</span>
+        <span style="color: green;"># Calculate distance function</span>
+        <span>def get_distance():</span>
+        <span>    send_trigger_pulse()</span>
+        <span>    wait_for_echo(True, 10000)</span>
+        <span>    start_time = time.time()</span>
+        <span>    wait_for_echo(False, 10000)</span>
+        <span>    end_time = time.time()</span>
+        <span>    pulse_duration = end_time - start_time</span>
+        <span>    distance = pulse_duration * 17150  # Speed of sound is approximately 343 meters/second</span>
+        <span>    distance = round(distance, 2)</span>
+        <span>    return distance</span>
+        <span style="color: green;"># Main loop</span>
+        <span>try:</span>
+        <span>    while True:</span>
+        <span>        distance = get_distance()</span>
+        <span>        print(f"Distance: {distance} cm")</span>
+        <span>        time.sleep(1)</span>
+        <span>except KeyboardInterrupt:</span>
+        <span>    GPIO.cleanup()</span>
+       <div class="flex justify-start space-x-20 mt-4">
+  <button id="backButton" class="btn btn-secondary">Back</button>
+  <button id="codeSubmit" class="btn btn-primary">Submit</button>
 </div>
+
+      </pre>
+    </div>
 
     <!-- Error Box -->
     <div
