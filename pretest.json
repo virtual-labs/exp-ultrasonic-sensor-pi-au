@@ -1,0 +1,71 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which type of waves does the HC-SR04 Ultrasonic Sensor emit for distance measurement?",
+      "answers": {
+        "a": "Infrared waves",
+        "b": "Ultrasonic sound waves",
+        "c": "Microwaves",
+        "d": "Radio waves"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the typical operating voltage for the HC-SR04 Ultrasonic Sensor?",
+      "answers": {
+        "a": "12V DC",
+        "b": "9V DC",
+        "c": "5V DC",
+        "d": "3.3V DC"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Why is a voltage divider often used when connecting the Echo pin to a Raspberry Pi?",
+      "answers": {
+        "a": "To increase signal speed",
+        "b": "To protect the Pi from 5V logic levels",
+        "c": "To reduce noise in the signal",
+        "d": "To improve accuracy of measurements"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In this experiment, the distance is calculated based on:",
+      "answers": {
+        "a": "The amplitude of the reflected ultrasonic wave",
+        "b": "The phase shift between sent and received signals",
+        "c": "The time taken for the ultrasonic pulse to travel to the object and back",
+        "d": "The frequency change of the reflected wave"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the typical measurement range of the HC-SR04 Ultrasonic Sensor?",
+      "answers": {
+        "a": "2 cm to 400 cm",
+        "b": "10 cm to 10 m",
+        "c": "1 mm to 50 cm",
+        "d": "5 cm to 200 cm"
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which Raspberry Pi library is commonly used in Python to control GPIO pins for this experiment?",
+      "answers": {
+        "a": "RPi.GPIO",
+        "b": "NumPy",
+        "c": "OpenCV",
+        "d": "Matplotlib"
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    }
+  ]
+}
