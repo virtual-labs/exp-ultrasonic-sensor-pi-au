@@ -1,1 +1,6 @@
-### Link your references in here
+1. [Tutorials Raspberry Pi – Ultrasonic Sensor HC-SR04](https://tutorials-raspberrypi.com/raspberry-pi-ultrasonic-sensor-hc-sr04/)
+2. [Robu.in – Ultrasonic Sensor Working Principle](https://robu.in/ultrasonic-sensor-working-principle/)
+3. [Robocraze – Interfacing Ultrasonic Sensor with Raspberry Pi 4 GPIO](https://robocraze.com/blogs/post/interfacing-ultrasonic-sensor-with-raspberry-pi-4-gpio)
+4. [Robu.in – Raspberry Pi Ultrasonic Sensor Interface Tutorial](https://robu.in/raspberry-pi-ultrasonic-sensor-interface-tutorial/)
+5. [Electronics Hub – Raspberry Pi Ultrasonic Sensor Interface Tutorial](https://www.electronicshub.org/raspberry-pi-ultrasonic-sensor-interface-tutorial/)
+6. [The Pi Hut – HC-SR04 Ultrasonic Range Sensor on the Raspberry Pi](https://thepihut.com/blogs/raspberry-pi-tutorials/hc-sr04-ultrasonic-range-sensor-on-the-raspberry-pi)
