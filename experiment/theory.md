@@ -30,7 +30,7 @@ The **1kΩ (R1)** and **2kΩ (R2)** resistors are used to build a **voltage divi
 <div><img src="./images/1k-ohm.png" alt="1k ohm resistor" width="8%"></div>
 
 - **2kΩ Resistor (R2)**: Connected between the GPIO pin and Ground (GND). It completes the voltage divider and sets the output voltage level.
-<div><img src="./images/2k-ohm.png" alt="2k ohm resistor" width="8%"></div>
+<div><img src="./images/2k-ohm.png" alt="2k ohm resistor" width="10%"></div>
 
 The output voltage at the junction of these resistors is calculated using the voltage divider formula:
 
