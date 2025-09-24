@@ -1,11 +1,10 @@
 ## Introduction
 
 
-<b>Discipline | <b>Fill your discipline name here
+<b>Discipline | <b>Computer Science and Engineering
 :--|:--|
-<b> Lab | <b> Fill your lab name here
-<b> Experiment|     <b> Fill your experiment name and number here
-
+<b> Lab | <b>Internet of Things (IoT) 
+<b> Experiment|     <b> To interface Ultrasonic sensor with Raspberry Pi 
 ### About the Experiment 
 
 Fill a brief description of this experiment here
