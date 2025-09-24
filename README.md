@@ -4,7 +4,7 @@
 <b>Discipline | <b>Computer Science and Engineering
 :--|:--|
 <b> Lab | <b>Internet of Things (IoT) 
-<b> Experiment|     <b> To interface Ultrasonic sensor with Raspberry Pi 
+<b> Experiment|     <b>Raspberry Pi Ultrasonic Sensor Interface Program
 ### About the Experiment 
 
 Fill a brief description of this experiment here
