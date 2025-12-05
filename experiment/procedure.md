@@ -1,4 +1,3 @@
-### **Procedure**
 
 #### **Hardware Setup**
 

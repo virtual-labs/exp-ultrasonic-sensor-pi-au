@@ -1,6 +1,5 @@
-### Aim of the Experiment
-The objective of this experiment is to interface an ultrasonic sensor (HC-SR04) with a Raspberry Pi and develop a Python program to measure distances with high accuracy. The experiment demonstrates how to utilize the Raspberry Pi’s General-Purpose Input/Output (GPIO) pins for real-time distance sensing using ultrasonic waves.  
 
+The objective of this experiment is to interface an ultrasonic sensor (HC-SR04) with a Raspberry Pi and develop a Python program to measure distances with high accuracy. The experiment demonstrates how to utilize the Raspberry Pi’s General-Purpose Input/Output (GPIO) pins for real-time distance sensing using ultrasonic waves.  
 
 #### **Applications**  
 Ultrasonic distance measurement has diverse real-world applications due to its non-contact nature, high accuracy, and reliability. Some key applications include:  

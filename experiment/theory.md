@@ -1,4 +1,3 @@
-### **Theory**
 
 This simulation demonstrates how to interface an **HC-SR04 Ultrasonic Sensor** with a **Raspberry Pi 4** to measure distances without physical contact. The setup uses Python programming to trigger the sensor and read the echo signal. The time taken for the sound wave to bounce back is used to calculate the distance.
 
@@ -7,7 +6,7 @@ This simulation demonstrates how to interface an **HC-SR04 Ultrasonic Sensor** w
 
 ##### 1. Raspberry Pi 4 Model B
 The **Raspberry Pi 4** is a powerful single-board computer with **GPIO (General Purpose Input/Output)** pins. It supports Python and allows hardware interfacing with various sensors and components.
-   <div><img src="./images/raspberrypi.png" alt="re-entrance" width='60%'></div>
+   <div><img src="./images/raspberrypi.png" alt="re-entrance" width='40%'></div>
 
 ##### 2. HC-SR04 Ultrasonic Sensor
 
@@ -20,7 +19,7 @@ It has **four pins**, each with a specific function:
 - **Echo**: Output pin. Goes high (5V) for the duration the sound wave takes to travel to the object and back. This pulse width is used to calculate the distance.
 - **GND**: Ground. Connect to **GND** on the Raspberry Pi.
 
-<div><img src="./images/HC-sensor.webp" alt="HC-SR04 Ultrasonic Sensor" width='60%'></div>
+<div><img src="./images/HC-sensor.webp" alt="HC-SR04 Ultrasonic Sensor" width='25%'></div>
 
  
  ##### 3. Resistors (1kΩ and 2kΩ)
@@ -28,10 +27,10 @@ It has **four pins**, each with a specific function:
 The **1kΩ (R1)** and **2kΩ (R2)** resistors are used to build a **voltage divider** circuit, which reduces the 5V signal from the Echo pin of the HC-SR04 sensor down to approximately 3.3V—safe for the Raspberry Pi's GPIO pins.
 
 - **1kΩ Resistor (R1)**: Connected between the Echo pin of the sensor and the point where the GPIO input wire and R2 meet. It helps reduce the voltage in proportion with R2.
-<div><img src="./images/1k-ohm.png" alt="1k ohm resistor" width="20%"></div>
+<div><img src="./images/1k-ohm.png" alt="1k ohm resistor" width="8%"></div>
 
 - **2kΩ Resistor (R2)**: Connected between the GPIO pin and Ground (GND). It completes the voltage divider and sets the output voltage level.
-<div><img src="./images/2k-ohm.png" alt="2k ohm resistor" width="20%"></div>
+<div><img src="./images/2k-ohm.png" alt="2k ohm resistor" width="10%"></div>
 
 The output voltage at the junction of these resistors is calculated using the voltage divider formula:
 
